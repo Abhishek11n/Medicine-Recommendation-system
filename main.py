@@ -10,16 +10,16 @@ app = Flask(__name__)
 
 
 # load databasedataset===================================
-sym_des = pd.read_csv("datasets/symtoms_df.csv")
-precautions = pd.read_csv("datasets/precautions_df.csv")
-workout = pd.read_csv("datasets/workout_df.csv")
-description = pd.read_csv("datasets/description.csv")
-medications = pd.read_csv('datasets/medications.csv')
-diets = pd.read_csv("datasets/diets.csv")
+sym_des = pd.read_csv("/content/Medicine-Recommendation-system/datasets/symtoms_df.csv")
+precautions = pd.read_csv("/content/Medicine-Recommendation-system/datasets/precautions_df.csv")
+workout = pd.read_csv("/content/Medicine-Recommendation-system/datasets/workout_df.csv")
+description = pd.read_csv("/content/Medicine-Recommendation-system/datasets/description.csv")
+medications = pd.read_csv('/content/Medicine-Recommendation-system/datasets/medications.csv')
+diets = pd.read_csv("/content/Medicine-Recommendation-system/datasets/diets.csv")
 
 
 # load model
-svc = pickle.load(open('models/svc.pkl','rb'))
+svc = pickle.load(open('/content/Medicine-Recommendation-system/models/svc.pkl','rb'))
 
 
 def helper(dis):
@@ -113,4 +113,4 @@ def blog():
 
 if __name__ == '__main__':
 
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=3000)
